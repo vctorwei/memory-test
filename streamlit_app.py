@@ -10,11 +10,13 @@ st.set_page_config(page_title="深圳记忆", layout="wide", initial_sidebar_sta
 # 全局隐藏 header 和 footer
 st.markdown("""
     <style>
-    header {visibility: hidden !important;}
-    footer {visibility: hidden !important;}
+    /* 隐藏 header、footer 和 Streamlit 默认 UI */
+    header {display: none !important;}
+    footer {display: none !important;}
+    div[data-testid="stToolbar"] { display: none !important; }
+    div[data-testid="stStatusWidget"] { display: none !important; }
     </style>
 """, unsafe_allow_html=True)
-
 # **创建左侧 Tab 选择**
 tab = st.sidebar.radio("选择页面", ["深圳记忆", "下载历史", "诗歌弹幕"])
 
